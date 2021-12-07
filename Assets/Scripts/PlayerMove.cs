@@ -11,6 +11,8 @@ public class PlayerMove : MonoBehaviour
 
     bool onFloor = true;
 
+    public ParticleSystem landParticles;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,7 @@ public class PlayerMove : MonoBehaviour
     {
         if(collision.gameObject.tag == "Floor")
         {
+            landParticles.Play();
             onFloor = true;
         }
     }
